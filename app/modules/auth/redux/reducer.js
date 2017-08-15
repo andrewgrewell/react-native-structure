@@ -1,21 +1,25 @@
 import { handleActions } from 'redux-actions';
 
 import {
-    AUTH_SUCCESS,
-    AUTH_FAILURE
+    ATTEMPT_LOGIN,
+    LOGIN_SUCCESS,
+    LOGIN_FAILURE
 } from './actionTypes';
 
-// This would be an immutable object
+// State would be an immutable class
 const initialState = {
     authenticated: false
 };
 
 
 export default handleActions({
-    [AUTH_SUCCESS]: (state) => {
+    [ATTEMPT_LOGIN]: (state) => {
+        return { ...state, error: null };
+    },
+    [LOGIN_SUCCESS]: (state) => {
         return { ...state, authenticated: true };
     },
-    [AUTH_FAILURE]: (state, { payload }) => {
-        return { ...state, authenticated: false, errorMessage: payload.errorMessage };
+    [LOGIN_FAILURE]: (state, { payload }) => {
+        return { ...state, authenticated: false, error: payload.error };
     }
 }, initialState);

@@ -1,3 +1,6 @@
+/**
+ * In a production app this module would also include throttling on events as well storage of the state on the device
+ */
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import reduce from 'lodash/reduce';

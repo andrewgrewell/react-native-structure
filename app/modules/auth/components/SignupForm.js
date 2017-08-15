@@ -3,8 +3,8 @@ import createReactClass from 'create-react-class';
 import { View, Text } from 'react-native';
 
 
-const Signup = createReactClass({
-    displayName: 'Signup',
+const SignupForm = createReactClass({
+    displayName: 'SignupForm',
     propTypes: {},
 
     render() {
@@ -19,4 +19,4 @@ const Signup = createReactClass({
 });
 
 
-export default Signup;
+export default SignupForm;

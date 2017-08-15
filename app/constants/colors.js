@@ -15,3 +15,5 @@ export const semiTransparentLight = 'rgba(250, 250, 250, 0.25)';
 
 export const textDark = 'rgb(25, 25, 25)';
 export const textLight = 'rgb(249, 249, 249)';
+
+export const errorText = 'rgb(200, 0, 50)';
