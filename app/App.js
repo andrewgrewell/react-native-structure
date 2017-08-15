@@ -1,10 +1,12 @@
 import React from 'react';
 import createReactClass from 'create-react-class';
-import { StatusBar, View, Text } from 'react-native';
+import { StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
 
-import modules from './modules';
+import { initStore } from './redux';
 import { FullScreenLoading } from './components';
+import { Container as Auth } from './modules/auth';
+import { Container as Navigation } from './modules/navigation';
 
 
 const App = createReactClass({
@@ -17,6 +19,7 @@ const App = createReactClass({
 
     componentDidMount() {
         StatusBar.setHidden(true);
+        initStore().then((store) => this.setState({ store }));
     },
 
     render() {
@@ -26,13 +29,17 @@ const App = createReactClass({
 
         return (
             <Provider store={this.state.store}>
-                <View>
-                    <Text>
-                        Hello App!
-                    </Text>
-                </View>
+                {this.renderAuthOrNavigation()}
             </Provider>
         );
+    },
+
+    renderAuthOrNavigation() {
+        if (!this.props.authenticated) {
+            return <Auth/>;
+        }
+
+        return <Navigation/>;
     }
 });
 

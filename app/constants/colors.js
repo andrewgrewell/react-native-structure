@@ -13,5 +13,5 @@ export const lightGray = '#E6E7E8';
 export const semiTransparentDark = 'rgba(88, 89, 91, 0.25)';
 export const semiTransparentLight = 'rgba(250, 250, 250, 0.25)';
 
-export const textDark = '#C3FFFA';
-export const textLight = '#373F39';
+export const textDark = 'rgb(25, 25, 25)';
+export const textLight = 'rgb(249, 249, 249)';

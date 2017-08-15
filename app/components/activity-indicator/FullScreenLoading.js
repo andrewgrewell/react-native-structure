@@ -5,7 +5,10 @@ import { colors } from '../../constants';
 
 
 const FullScreenLoading = (props) => (
-    <BasicActivityIndicator centered style={styles.container}/>
+    <BasicActivityIndicator centered
+                            color="white"
+                            size="large"
+                            style={styles.container}/>
 );
 
 const styles = StyleSheet.create({

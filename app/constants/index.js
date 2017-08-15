@@ -1,2 +1,7 @@
-export * as colors from './colors';
-export * as layout from './layout';
+import * as colors from './colors';
+import * as layout from './layout';
+import * as text from './text';
+
+export { colors };
+export { layout };
+export { text };
